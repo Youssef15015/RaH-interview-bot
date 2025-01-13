@@ -18,7 +18,13 @@ st.subheader("Chat with your AI Assistant, Interview Bot!")
 
 vector_store_path = "vectorstore.pkl"
 with open("vectorstore.pkl", "rb") as f:
-    vectorstore = pickle.load(f)
+    try
+    {
+        vectorstore = pickle.load(f)
+    }
+    except (e):
+        print(e)
+
 
 
 if "messages" not in st.session_state:
