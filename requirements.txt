@@ -1,4 +1,4 @@
 langchain_core==0.3.29
-langchain_nvidia_ai_endpoints
+langchain_nvidia_ai_endpoints==0.3.7
 onnx==1.16.1
 anndata==0.10.8
