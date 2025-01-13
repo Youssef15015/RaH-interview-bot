@@ -17,8 +17,8 @@ llm = ChatNVIDIA(mode = "mixtral_8x7b")
 st.subheader("Chat with your AI Assistant, Interview Bot!")
 
 vector_store_path = "vectorstore.pkl"
-with open(vector_store_path, "rb") as f:
-    vectorstore = pickle.load("vectorstore.pkl")
+with open("vectorstore.pkl", "rb") as f:
+    vectorstore = pickle.load(f)
 
 
 if "messages" not in st.session_state:
