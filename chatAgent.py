@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import os
 import pickle
+import joblib
 from langchain.vectorstores import FAISS
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
@@ -17,8 +18,9 @@ llm = ChatNVIDIA(mode = "mixtral_8x7b")
 
 st.subheader("Chat with your AI Assistant, Interview Bot!")
 
-vectorstore = FAISS.load_local("vectorstore-data", NVIDIAEmbeddings(model="NV-Embed-QA", mode_type="passage"), allow_dangerous_deserialization=True)
-
+vector_store_path = "vectorstore.pkl"
+with open(vector_store_path, "rb") as f:
+    vectorstore = joblib.load(f)
 
 
 if "messages" not in st.session_state:
