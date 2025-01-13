@@ -17,6 +17,7 @@ st.subheader("Chat with your AI Assistant, Interview Bot!")
 
 vector_store_path = "vectorstore.pkl"
 with open(vector_store_path, "rb") as f:
+    print(f)
     vectorstore = pickle.load(f)
 
 
