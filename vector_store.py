@@ -2,8 +2,9 @@ from langchain.text_splitter import CharacterTextSplitter
 from langchain.document_loaders import DirectoryLoader
 from langchain.vectorstores import FAISS
 from langchain_nvidia_ai_endpoints import ChatNVIDIA, NVIDIAEmbeddings
-import pickle
+import pandas as pd
 import streamlit as st
+import pickle
 import os
 import getpass
 
@@ -47,7 +48,7 @@ vectorstore = None
 
 if use_existing_vector_store == "Yes" and vector_store_exists:
     with open(vector_store_path, "rb") as f:
-        vectorstore = pickle.load(f)
+        vectorstore = pd.read_pickle(f)
 
 else:
     if raw_documents:
