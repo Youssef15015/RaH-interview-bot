@@ -16,9 +16,7 @@ llm = ChatNVIDIA(mode = "mixtral_8x7b")
 
 st.subheader("Chat with your AI Assistant, Interview Bot!")
 
-vector_store_path = "vectorstore.pkl"
-with open("vectorstore.pkl", "rb") as f:
-            vectorstore = pd.read_pickle(f)
+vectorstore = FAISS.load_local("vectorstore-data", NVIDIAEmbeddings(model="NV-Embed-QA", mode_type="passage"), allow_dangerous_deserialization=True)
 
 
 
