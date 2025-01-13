@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 import os
 import pickle
 from langchain_core.output_parsers import StrOutputParser
@@ -18,7 +19,7 @@ st.subheader("Chat with your AI Assistant, Interview Bot!")
 vector_store_path = "vectorstore.pkl"
 with open(vector_store_path, "rb") as f:
     print(f)
-    vectorstore = pickle.load(f)
+    vectorstore = pd.read_pickle(f)
 
 
 if "messages" not in st.session_state:
