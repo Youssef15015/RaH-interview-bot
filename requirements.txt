@@ -3,4 +3,3 @@ langchain_nvidia_ai_endpoints==0.3.7
 onnx==1.16.1
 anndata==0.10.8
 streamlit==1.41.1
-scikit-learn==0.24.2
