@@ -18,8 +18,7 @@ st.subheader("Chat with your AI Assistant, Interview Bot!")
 
 vector_store_path = "vectorstore.pkl"
 with open(vector_store_path, "rb") as f:
-    print(f)
-    vectorstore = pd.read_pickle(f)
+    vectorstore = pickle.load("vectorstore.pkl")
 
 
 if "messages" not in st.session_state:
