@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import os
 import pickle
+from langchain.vectorstores import FAISS
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_nvidia_ai_endpoints import ChatNVIDIA
