@@ -9,10 +9,6 @@ import os
 import getpass
 
 
-if not os.getenv("NIVIDA_API_KEY"):
-    os.environ["NVIDIA_API_KEY"] = "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"
-
-
 st.set_page_config(layout="wide")
 llm = ChatNVIDIA(mode = "mixtral_8x7b")
 document_embedder = NVIDIAEmbeddings(model="NV-Embed-QA", mode_type="passage")
